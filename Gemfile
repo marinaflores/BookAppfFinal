@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby "2.3.8"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -11,8 +12,7 @@ gem 'foreman'
 gem 'devise'
 # Translations for the devise gem
 gem 'devise-i18n'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '1.3.13'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -64,7 +64,8 @@ group :development, :test do
   gem 'capybara'
   #
   gem 'factory_bot_rails'
-
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3', '1.3.13'
 end
 
 group :development do
@@ -75,3 +76,9 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  #Heroku Pendency
+  gem 'pg'
+  #Heroku Pendency
+  gem 'rails_12factor', group: :production
+end
